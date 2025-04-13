@@ -337,18 +337,18 @@ html {
     font-size: 24px;
     font-weight: 400;
     text-transform: uppercase;
-    color: #b9975b;
+    color: #d4af37;
     margin-bottom: 15px;
   }
   
   /* Paragraph */
-  .specialties-inner p {
-    font-size: 16px;
-    color: #ccc;
-    max-width: 500px;
-    margin: 0 auto 30px auto;
-    line-height: 1.6;
+  .specialties-inner img {
+    width: 635px;
+    height: 733px;
+    object-fit: cover; /* or use 'contain' if you want the entire image visible without cropping */
+    transition: opacity 0.5s ease-in-out;
   }
+  
   
   /* Button */
   .view-all {
@@ -463,7 +463,7 @@ html {
 
 .bottom {
     display: flex;
-    background-color:#0F1D21;
+    background-color:#0B1315;
     font-size: 16px;
     max-width: 600px;
     margin: 0 auto 40px auto;
@@ -477,7 +477,7 @@ html {
 
 footer{
 
-  background-color:#0F1D21;
+  background-color:#0B1315;
 padding-bottom: 5%;
 
 }
@@ -521,5 +521,65 @@ padding-bottom: 5%;
     object-fit: cover;
   }
 
+.customer-reviews {
+  padding: 60px 75px;
+  background-color: #0F1D21;
+  text-align: center;
+}
+
+.customer-reviews h2 {
+
+  margin-bottom: 42px;
+  color: #d4af37;
+  font-style: normal;
+  
+}
+
+.reviews-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.review-card {
+  flex: 0 0 350px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  text-align: left;
+}
+
+.review-card .stars {
+  font-size: 1.7rem;
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.review-card h4 {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Hide scrollbar for modern browsers */
+.reviews-container::-webkit-scrollbar {
+  display: none;
+}
+.reviews-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+  
  
   
