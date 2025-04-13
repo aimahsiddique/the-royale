@@ -1,0 +1,525 @@
+/* Import Instrument Serif font */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Instrument Serif', serif;
+    background-color: black;
+    color: white;
+}
+
+@keyframes appear {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 100% 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+
+  @keyframes slide {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+
+    }
+  }
+
+
+  .about-content{
+    animation: slide linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+  
+  .about-images  img {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 1%;
+  }
+
+  
+
+/* ===== Header & Navigation ===== */
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 10;
+    justify-content: center;
+    background-color: #0F1D21;
+    
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+   /* justify-content: space-between; /* Equal spacing */
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    max-width: 1800px;
+    position: fixed;
+}
+
+/* Each item takes equal space */
+.logo, .navbar, .spacer {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Ensures items stay centered in their section */
+    align-items: center;
+}
+
+.logo {
+    margin: 0;    
+    display: flex;
+    justify-content: flex-start; /* Ensures the logo stays fully left within its box */
+}
+
+
+/* Logo Styling */
+.logo img {
+    height: 200px;
+    width: auto;
+    display: block;
+}
+
+/* Spacer Styling */
+.spacer {
+    width: 225px;
+    height: 150px;
+}
+
+/* Navbar stays centered */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Menu Text Styling */
+.nav-links a {
+    text-decoration: none;
+    font-size: 24px;
+    color: rgba(202, 172, 132, 1);
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: gold;
+}
+
+
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+/* Image Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider-img.active {
+    opacity: 1;
+}
+
+/* Hero Text */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Italianno', cursive;
+    color: white;
+    z-index: 3;
+    font-weight:normal;}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/layer.png') no-repeat center/cover;
+    opacity: 0.8; /* Adjust transparency */
+    z-index: 2; /* Above images, below text */
+}
+
+/* Left and Right Vertical Lines */
+.vertical-line {
+    position: fixed;  /* Ensures lines stay fixed as page scrolls */
+    top: 0;
+    width: 0.1px; /* Adjust thickness */
+    height: 100vh; /* Full viewport height */
+    background-color: rgba(202, 172, 132, 0.8); /* Goldish color */
+    z-index: 3; /* Below text but above images */
+}
+
+.left-line {
+    left: 75px; /* Adjust distance from left */
+}
+
+.right-line {
+    right: 75px; /* Adjust distance from right */
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+/* .horizontal-line {
+    position: fixed;
+    top: 150px; 
+    width: 100%; 
+    height: 0.1px;  
+    background-color: rgba(202, 172, 132, 0.8); 
+    z-index: 3;  
+} */
+
+.about-us {
+    position: relative;
+    background-color: rgba(11, 19, 21, 1); /* Dark Background */
+    color: #d4af37; /* Gold Text */
+    text-align: center;
+    padding: 80px 10%;
+    z-index: 2;
+}
+
+.about-content h3 {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #b9975b;
+    margin-bottom: 15px;
+}
+
+.about-content h1 {
+    font-size: 42px;
+    font-weight:300;
+    margin-bottom: 15px;
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+.about-content p {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    z-index: 3;
+}
+
+.about-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 3;
+}
+
+.about-images img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+.pattern {
+    
+    background-size: cover;
+    background-position: center;
+    z-index: 3;
+}
+
+/* Vertical Lines - 4 Lines */
+.vertical-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* Prevent interaction */
+    z-index: -1; /* Send to the back */
+}
+
+/* Create four vertical lines */
+.vertical-lines .line {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0.1px; /* Line thickness */
+    height: 100%;
+    background-color: rgba(202, 172, 132, 0.8); /* Light color for visibility */
+}
+
+/* Position each line */
+.vertical-lines .line-1 { left: 20%; }
+.vertical-lines .line-2 { left: 40%; }
+.vertical-lines .line-3 { left: 60%; }
+.vertical-lines .line-4 { left: 80%; }
+
+
+/* Main section styling */
+.specialties {
+    background-color: #0B1315;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Inner container */
+  .specialties-inner {
+    display: flex;
+    width: 100vw;
+    background-color: #0F1D21;
+    gap: 40px;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+  
+  /* Text block */
+  .specialties-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 9%;
+  }
+  
+  /* Image that determines height */
+  .specialties-inner img {
+    display: block;
+    height: auto;
+    max-height: 75%;
+    width: auto;
+    max-width: 45%;
+    object-fit: contain;
+  }
+  
+  /* Heading */
+  .specialties-inner h2 {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #b9975b;
+    margin-bottom: 15px;
+  }
+  
+  /* Paragraph */
+  .specialties-inner p {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+  }
+  
+  /* Button */
+  .view-all {
+    background: none;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    align-self: center;
+  }
+  
+  .view-all:hover {
+    background: #d4af37;
+    color: black;
+  }
+  
+  .our-menu {
+    position: relative;
+    background-color: rgba(11, 19, 21, 1); /* Dark Background */
+    color: #d4af37; /* Gold Text */
+    text-align: center;
+    padding: 80px 10%;
+    z-index: 2;
+}
+
+.our-menu h1 {
+    font-size: 42px;
+    font-weight: 300;
+    font-family: 'Instrument Sans', sans-serif;
+    padding: 2%;
+}
+
+.menu-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 3;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+}
+
+.menu-images img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(202, 172, 132, 0.4);  /* Semi-transparent overlay */
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 3; /* Makes sure overlay is above the image */
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.view-text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-images h2 {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #b9975b;
+    margin-bottom: 15px;
+    font-family: 'quicksand';
+    font-style: normal;
+}
+
+.menu-images p {
+    color: #b9975b;
+    padding: 0%;
+    font-size: 16px;
+}
+
+
+
+.bottom img{
+
+    height: 200px;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.bottom {
+    display: flex;
+    background-color:#0F1D21;
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    z-index: 3;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+footer{
+
+  background-color:#0F1D21;
+padding-bottom: 5%;
+
+}
+
+.SM {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.SM p {
+ 
+    text-decoration: underline;
+    color: #b9975b;
+}
+/* Preloader should cover entire screen */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black; /* fallback while video loads */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+  }
+  
+  #preloader.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Centered video styling */
+  .smoke video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+ 
+  
